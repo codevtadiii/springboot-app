@@ -1,0 +1,21 @@
+---
+- hosts: localhost
+  become: true
+
+  tasks:
+
+    - name: Stop old container
+      shell: docker stop ecommerce-container || true
+
+    - name: Remove old container
+      shell: docker rm ecommerce-container || true
+
+    - name: Pull latest image
+      shell: docker pull adityajhacodess/ecommerce-app:latest
+
+    - name: Run container
+      shell: |
+        docker run -d \
+        --name ecommerce-container \
+        -p 8085:8080 \
+        adityajhacodess/ecommerce-app:latest

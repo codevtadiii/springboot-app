@@ -1,0 +1,24 @@
+---
+- hosts: localhost
+  become: true
+
+  tasks:
+
+    - name: Stop existing container
+      shell: docker stop springboot-container || true
+
+    - name: Remove existing container
+      shell: docker rm springboot-container || true
+
+    - name: Remove old image
+      shell: docker rmi adityajhacodess/springboot-cicd:v1 || true
+
+    - name: Pull latest image
+      shell: docker pull adityajhacodess/springboot-cicd:v1
+
+    - name: Run Docker container
+      shell: |
+        docker run -d \
+        --name springboot-container \
+        -p 8081:8081 \
+        adityajhacodess/springboot-cicd:v1
