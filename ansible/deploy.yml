@@ -11,11 +11,11 @@
       shell: docker rm ecommerce-container || true
 
     - name: Pull latest image
-      shell: docker pull adityajhacodess/ecommerce-app:latest
+      shell: docker pull adityajhacodess/springboot-app:latest
 
     - name: Run container
       shell: |
         docker run -d \
         --name ecommerce-container \
         -p 8085:8080 \
-        adityajhacodess/ecommerce-app:latest
+        adityajhacodess/springboot-app:latest
