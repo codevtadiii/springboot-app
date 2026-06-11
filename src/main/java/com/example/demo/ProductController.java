@@ -11,7 +11,7 @@ public class ProductController {
 
     @GetMapping("/")
     public String home() {
-        return "Welcome to DevOps E-Commerce Application";
+        return "Welcome to DevOps E-Commerce Application come in!";
     }
 
     @GetMapping("/health")
