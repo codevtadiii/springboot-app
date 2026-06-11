@@ -17,5 +17,5 @@
       shell: |
         docker run -d \
         --name ecommerce-container \
-        -p 8085:8080 \
+        -p 8085:8081 \
         adityajhacodess/springboot-app:latest
