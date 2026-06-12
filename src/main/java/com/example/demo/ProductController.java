@@ -16,7 +16,7 @@ public class ProductController {
 
     @GetMapping("/health")
     public String health() {
-        return "Application is running successfully";
+        return "Changes made ";
     }
 
     @GetMapping("/products")
